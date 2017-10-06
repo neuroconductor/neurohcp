@@ -6,4 +6,6 @@ data/HCP_csvs/*
 data/HCP_900_csvs/*
 ^\.travis\.yml$
 ^appveyor\.yml$
-
+^DESCRIPTION\.bak$
+^\./\.travis\.yml\.bak$
+^\./appveyor\.yml\.bak$
