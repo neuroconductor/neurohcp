@@ -5,13 +5,22 @@ warnings_are_errors: true
 use_bioc: true
 bioc_required: true
 cran: http://cran.rstudio.com
+addons:
+  apt:
+    packages:
+    - libfftw3-dev
+    - libgsl0-dev
+    - libgsl0ldbl
 os:
 - linux
 - osx
+osx_image: xcode9
+dist: trusty
 env:
   global:
   - RGL_USE_NULL=TRUE
   - PROJECT_NAME=neuroconductor
+  - DISPLAY=:99.0
 r_check_args: "--as-cran"
 before_install:
 - export PROJ_DIR=`basename $PWD`
@@ -19,6 +28,8 @@ before_install:
 - wget -O ${fname} http://bit.ly/travis_helpers
 - cat ${fname}; source ${fname}; rm ${fname}
 - cat DESCRIPTION
+- start_xvfb ;
+- no_open_mp ;
 - Rscript -e 'source("https://install-github.me/mangothecat/callr")'
 - remove_neuroc_packages
 - cat DESCRIPTION
@@ -26,6 +37,7 @@ before_install:
 - cat DESCRIPTION
 - export PACKAGE_NAME=`package_name`
 - if [[ "${PACKAGE_NAME}" == "waveslim" ]]; then fftw_install ; fi
+- if [[ "${PACKAGE_NAME}" == "dti" ]]; then gsl_install ; fi
 after_success:
 - cat ${PACKAGE_NAME}.Rcheck/00install.out
 - cat ${PACKAGE_NAME}.Rcheck/00check.log
@@ -43,7 +55,7 @@ deploy:
   on:
     tags: true
   api-key:
-    secure: wMscmjOttR/oJWYpVrFyCyYLNfII4ffTzZVxrR1FMbcrRwHW+2Eeq3T5STgARa/2GE2L/dgaBg7xqz+V18rVYU+Vi/nvulD4mM9z1JP0JCu7B1NlEW2fs378ySt7easjEEPENdMCHBOl7g5UwRsfS1rBzb5tchF0eQqgJEyccqiZdaAT/uhwiLe6+06Hkeu2HkpVxGKiuRA4ga14/hCHLQlBs/WsvkAi0z2NDFg4LZ4iwmaNYClmLe8UEftc34hNlbgBBnD9FgORQBTS3Dzo7uUY1Q1dM3VeFyRKIlbc6zITFoDeQ3c2vezdxH/bAP50ErkfYsub/c5k2LETQVd5ol/QbLQ11u+4gSPZgHr8hZg04ruI8BqiwYdVoTJ0VoLffnyNPM+HKFB9n0YhgzvBzk8i6X+cW04F1vmwzWGxDmvH8Pz5H3ryIlIPnWqMWhXnltwuFFamHLwExb5AGTqnAT9aU+J4fSUyUB/SNfbRRCyci7o5nMx/fKr+2NqSXoQa32t/DmjcHtY5MNRtox8gVJV8BbhC8Zti/ttyNPKcE3BYQwdDnQm/WzaeREfLgixQQl5EAZssrzwGFnULm+Nm5DdiFUm7JwVeZtvFYL9QiflwSiqPN8rw54u8O+n2HvfwfjpFChBweXmrOA2jCKRztLxRF2BuocwMHv+0+kfgwKg=
+    secure: E0qLbBTRbw1uQDvm2s4YceG/0Vn/7OiuRqvWgkP4FIk++B8XYak11VssD/aD9dO12cuHzRiOP3uQ4MMOqZ0MSWpKvLTnmvuPsabpL0gP/R6lYoTdNiGfNxNbp98kdxFDyu8Mk1ScJ0M/xi9mgNn8EIkBULpTMu+1/PrLpJyN3LkEEQCMeqgTdSX3EivGp16yMSHSYaZ3ca848eJFfxXBrmfD32N1QV33MJpw1VKFP4zwCzq4gpdcedtMcwoMjEccTNH53hfhRqz54Lto+FPslcVS4w1RL03txLUKnkZyPj48oYb7TD6UDWFLCN5mEq10sBMAwbQIP6KuywOFzXkDhqSHTksnJbXwVgQXP9yjdzLpYaUawx0FokxvvhEjDzBZ1YYEfk4DvB9ynrJ5ZavbDRce1pcXkm19J76TnL62vnRuKosKejk0pgTerCCRnxlPozxv5BgWLc0ZU+ixNXpw9If/bsxc0O8f4RhdEzsZ0Aa0/URbPx2FQHAJSV2+1eNJ2/GdbADihWX4VOAGWDhg9kLaqe1ZCwGqrGskhK0xT0QfApcmAwJSDU1QANZ6Dx1y4BWfnqQk+XhoLLxdnn4QNkW8TEYi5M9RRNVlSUxNM8tKShU6j+OSWOc7kJo2oCQBDumhH4N5RIYHE5bvMSth9zR+sI/jFmrQ+x1VsuYPAbQ=
 after_deploy:
 - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then Rscript -e 'covr::coveralls(type =
   "all")' ; fi
