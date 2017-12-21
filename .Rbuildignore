@@ -4,6 +4,7 @@
 download_hcp_csvs.R
 data/HCP_csvs/*
 data/HCP_900_csvs/*
+data/HCP_1200_csvs/*
 ^\.travis\.yml$
 ^appveyor\.yml$
 ^DESCRIPTION\.bak$
