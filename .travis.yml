@@ -30,7 +30,7 @@ before_install:
 - cat ${fname}; source ${fname}; rm ${fname}
 - cat DESCRIPTION
 - start_xvfb ;
-- no_open_mp ;
+- if [ "$TRAVIS_OS_NAME" = "osx" ]; then no_open_mp ; fi
 - Rscript -e 'source("https://install-github.me/mangothecat/callr")'
 - remove_neuroc_packages
 - cat DESCRIPTION
@@ -57,7 +57,7 @@ deploy:
   on:
     tags: true
   api-key:
-    secure: LRZvMOdpoTs+31TF79gfy6xWhIpS5h9BSFnnG0l7s2fv8mna3updLYqtNkv3/bnPA5TqrPBJJ060iMhr6NIjJWlMtRhS8cvnFrOrjd2JOMEpTpJEpR72Pfq3rlEkCOB9EHzSn0kqySiD12DNcAo+lMkvltvQP3gf6DihD5sGHgdeOw90u4+TvzgIpm610nejp9k1j/yB57gUSh0NFLqLTx1o+59N0u3spEArbOu54mRvg7Y8ApHJALfPmzjFo8RuZUGiQo1kpKMO7KT3+EHa6mQ8LlRmctSHYC4VKAAJFAz31GuMTb7taC7RLB5OxwjDyrLEdt03/ktKOBXoZTy9cP7SnhutVU5O9jmMXth7hV3ukgoXf6DbmMdRFzl+QAexzM8XNHeRFvxKGJ5IsSicWzH7AdZd97wBgIRukA4tTQfotXlD4EdiJ27XJlz3v4KxCtIJNZktSSYJKZz//osXpI0X02S942uCA1gYP6haE3zJvmvEZJFzMcnUBCd80gZQT3iz76wKhtLpmav49Rq0JucUMrJnDDu6Vj2NroJIwucLC9odNcjpmFQf8hXzFQhDguVB4C92OJP6dXH7CuSlEa4LbvQ0yaUOdWfk5G4uCby12H0yNkpO+/Hqrpym0qiKJFYRDflPMiE9dgK/iS3U6f7jKnDtxYJPd2F3eFRvssg=
+    secure: Cuxg1oeZdPL1oZdR6QFXmp3M5MGof9IWxiBEampw9ZfVxEvYkcE9mtL5og57w0NbwAMGT98uSR+RcZ2KV8OJhy0SzvYSnc5vvqaaigvTPNo7w9HghMmbM+R0uqkOSzxHFNR2bqQEp4FsBpXjfs+qLDvYMMQ8aaAhhksR43Q7I2jzJSI64eAeFAmlPjqySMKQqwTv+6pbOzUwd+Y6J9rhMzRiKMjtOc3eeldWZm2+b7lWnleRuRmySychGzalKn4CoNml52xeRa7kHcchMkEElifvR2HJf7AGSHUQU06miP0scmdsfOhrPRTJ0yEE/AwPBDd4usvdBDyuuiOQMg+0Hv1oHmV7/grE5/LGFJDjXEWTntdIunOtS41zZbWwj1FrrAAoCtj3wryXnjw49+FYZXha5t3n+5U2oIwjtZcqZLOmuIVEAEERonB5kQsFwqo2TUooBwB/K4rpVbnMnruIG9v6wJngkvz3n4Byv+26Wj16JO85OFoMzGsu9zgPgJE0SS3UkSRvI6xPXSZpve9EhTiSGqnzfiRYfEKfvqGzB4AeIvBtZPTUyeLQbjR7D2Vs40BKbZei4C+GSP6pZ9n4/CfiOXN4D/EvenplTMI65MegPTGdm9gzgWng9ToEJT0WwBwUk9Sn4Go0ry0adA2Kbftwl4lUcINPOkTRS1JfFs8=
 after_deploy:
 - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then echo 'covr::coveralls(type = "all")'
   > neuroc_covr.R ; travis_wait 100 Rscript neuroc_covr.R ; rm neuroc_covr.R ; fi
