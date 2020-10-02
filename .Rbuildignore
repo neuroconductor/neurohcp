@@ -10,3 +10,4 @@ data/HCP_1200_csvs/*
 ^cran-comments\.md$
 ^DESCRIPTION\.bak$
 ^\./\.travis\.yml\.bak$
+^\./appveyor\.yml\.bak$
