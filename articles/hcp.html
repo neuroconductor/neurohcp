@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Getting Data from the Human Connectome Project (HCP) • neurohcp</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Getting Data from the Human Connectome Project (HCP)">
 <meta property="og:description" content="neurohcp">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -17,7 +18,7 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -30,18 +31,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">neurohcp</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.8.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.9.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
@@ -81,10 +76,10 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Getting Data from the Human Connectome Project (HCP)</h1>
+      <h1 data-toc-skip>Getting Data from the Human Connectome Project (HCP)</h1>
                         <h4 class="author">John Muschelli</h4>
             
-            <h4 class="date">2020-03-18</h4>
+            <h4 class="date">2020-10-02</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/muschellij2/neurohcp/blob/master/vignettes/hcp.Rmd"><code>vignettes/hcp.Rmd</code></a></small>
       <div class="hidden name"><code>hcp.Rmd</code></div>
@@ -113,29 +108,33 @@
 <h1 class="hasAnchor">
 <a href="#installing-the-neurohcp-package" class="anchor"></a>Installing the neurohcp package</h1>
 <p>We will install the neurohcp package using the Neuroconductor installer:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span>(<span class="st">"http://neuroconductor.org/neurocLite.R"</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">neuro_install</span>(<span class="st">"neurohcp"</span>, <span class="dt">release =</span> <span class="st">"stable"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="kw"><a href="https://rdrr.io/r/base/source.html">source</a></span><span class="op">(</span><span class="st">"http://neuroconductor.org/neurocLite.R"</span><span class="op">)</span>
+<span class="fu">neuro_install</span><span class="op">(</span><span class="st">"neurohcp"</span>, release <span class="op">=</span> <span class="st">"stable"</span><span class="op">)</span></pre></div>
 <div id="setting-the-api-key" class="section level2">
 <h2 class="hasAnchor">
 <a href="#setting-the-api-key" class="anchor"></a>Setting the API key</h2>
 <p>In the <code>neurohcp</code> package, <code>set_aws_api_key</code> will set the AWS access keys:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">set_aws_api_key</span>(<span class="dt">access_key =</span> <span class="st">"ACCESS_KEY"</span>, <span class="dt">secret_key =</span> <span class="st">"SECRET_KEY"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="../reference/set_aws_api_key.html">set_aws_api_key</a></span><span class="op">(</span>access_key <span class="op">=</span> <span class="st">"ACCESS_KEY"</span>, secret_key <span class="op">=</span> <span class="st">"SECRET_KEY"</span><span class="op">)</span></pre></div>
 <p>or these can be stored in <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code> environment variables, respectively.</p>
 <p>Once these are set, the functions of neurohcp are ready to use. To test that the API keys are set correctly, one can run <code>bucketlist</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="cf">if</span> (<span class="kw">have_aws_key</span>()) {</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  neurohcp<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/neurohcp/man/bucketlist.html">bucketlist</a></span>()</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/set_aws_api_key.html">have_aws_key</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu">neurohcp</span><span class="fu">::</span><span class="fu"><a href="../reference/bucketlist.html">bucketlist</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">}</span></pre></div>
 <p>We see that <code>hcp-openaccess</code> is a bucket that we have access to, and therefore have access to the data.</p>
 </div>
 <div id="getting-data-downloading-a-directory-of-data" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-data-downloading-a-directory-of-data" class="anchor"></a>Getting Data: Downloading a Directory of Data</h2>
 <p>In the neurohcp package, there is a data set indicating the scans read for each subject, named <code>hcp_900_scanning_info</code>. We can subset those subjects that have diffusion tensor imaging:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">ids_with_dwi =<span class="st"> </span>hcp_<span class="dv">900</span>_scanning_info <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>(scan_type <span class="op">%in%</span><span class="st"> "dMRI"</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">  </span><span class="kw">select</span>(id) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span>unique</a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(ids_with_dwi)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="va">ids_with_dwi</span> <span class="op">=</span> <span class="va">hcp_900_scanning_info</span> <span class="op">%&gt;%</span> 
+  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">scan_type</span> <span class="op">%in%</span> <span class="st">"dMRI"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">select</span><span class="op">(</span><span class="va">id</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="va">unique</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">ids_with_dwi</span><span class="op">)</span></pre></div>
 <pre><code># A tibble: 6 x 1
   id    
   &lt;chr&gt; 
@@ -146,49 +145,35 @@
 5 101309
 6 101410</code></pre>
 <p>Let us download the complete directory of diffusion data using <code>download_hcp_dir</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">r =<span class="st"> </span><span class="kw">download_hcp_dir</span>(<span class="st">"HCP/100307/T1w/Diffusion"</span>, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/basename.html">basename</a></span>(r<span class="op">$</span>output_files))</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="va">r</span> <span class="op">=</span> <span class="fu"><a href="../reference/download_hcp_dir.html">download_hcp_dir</a></span><span class="op">(</span><span class="st">"HCP/100307/T1w/Diffusion"</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/basename.html">basename</a></span><span class="op">(</span><span class="va">r</span><span class="op">$</span><span class="va">output_files</span><span class="op">)</span><span class="op">)</span></pre></div>
 <pre><code>[1] "bvals"                   "bvecs"                  
 [3] "data.nii.gz"             "grad_dev.nii.gz"        
 [5] "nodif_brain_mask.nii.gz"</code></pre>
 <p>This diffusion data is the data that can be used to create summaries such as fractional anisotropy and mean diffusivity.</p>
 <p>If we create a new column with all the directories, we can iterate over these to download all the diffusion data for these subjects from the HCP database.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">ids_with_dwi =<span class="st"> </span>ids_with_dwi <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id_dir =</span> <span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(<span class="st">"HCP/"</span>, id, <span class="st">"/T1w/Diffusion"</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit">
+<span class="va">ids_with_dwi</span> <span class="op">=</span> <span class="va">ids_with_dwi</span> <span class="op">%&gt;%</span> 
+  <span class="fu">mutate</span><span class="op">(</span>id_dir <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"HCP/"</span>, <span class="va">id</span>, <span class="st">"/T1w/Diffusion"</span><span class="op">)</span><span class="op">)</span></pre></div>
 </div>
 <div id="getting-data-downloading-a-single-file" class="section level2">
 <h2 class="hasAnchor">
 <a href="#getting-data-downloading-a-single-file" class="anchor"></a>Getting Data: Downloading a Single File</h2>
 <p>We can also download a single file using <code>download_hcp_file</code>. Here we will simply download the <code>bvals</code> file:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="cf">if</span> (<span class="kw">have_aws_key</span>()) {</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">  ret =<span class="st"> </span><span class="kw">download_hcp_file</span>(<span class="st">"HCP/100307/T1w/Diffusion/bvals"</span>, <span class="dt">verbose =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">}</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit">
+<span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="../reference/set_aws_api_key.html">have_aws_key</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span>
+  <span class="va">ret</span> <span class="op">=</span> <span class="fu"><a href="../reference/download_hcp_file.html">download_hcp_file</a></span><span class="op">(</span><span class="st">"HCP/100307/T1w/Diffusion/bvals"</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="op">}</span></pre></div>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#human-connectome-project-hcp">Human Connectome Project (HCP)</a></li>
-      <li>
-<a href="#getting-access-to-the-data">Getting Access to the Data</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#getting-an-accessapi-key">Getting an Access/API Key</a></li>
-      </ul>
-</li>
-      <li>
-<a href="#installing-the-neurohcp-package">Installing the neurohcp package</a><ul class="nav nav-pills nav-stacked">
-<li><a href="#setting-the-api-key">Setting the API key</a></li>
-      <li><a href="#getting-data-downloading-a-directory-of-data">Getting Data: Downloading a Directory of Data</a></li>
-      <li><a href="#getting-data-downloading-a-single-file">Getting Data: Downloading a Single File</a></li>
-      </ul>
-</li>
-      </ul>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
@@ -199,7 +184,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

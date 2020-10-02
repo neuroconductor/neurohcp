@@ -1,6 +1,7 @@
 pandoc: '2.2'
-pkgdown: 1.4.1.9000
-pkgdown_sha: d5e60a7232ee5f414f2a1de2aca5bf44054e7a08
-articles: []
-last_built: 2020-03-18T16:41Z
+pkgdown: 1.6.1.9000
+pkgdown_sha: e1e46f2e13c7efdb17bc4eae40bc3779c2b0b517
+articles:
+  hcp: hcp.html
+last_built: 2020-10-02T02:32Z
 
