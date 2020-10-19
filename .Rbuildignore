@@ -8,6 +8,9 @@ data/HCP_1200_csvs/*
 ^\.travis\.yml$
 ^appveyor\.yml$
 ^cran-comments\.md$
+^CRAN-RELEASE$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
 ^DESCRIPTION\.bak$
 ^\./\.travis\.yml\.bak$
-^\./appveyor\.yml\.bak$
